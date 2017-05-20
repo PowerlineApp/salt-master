@@ -1,0 +1,8 @@
+ext_pillar_first: True
+ext_pillar:
+  - s3:
+      bucket: deployment-data
+      verify_ssl: False
+      prefix: 'pillar'
+      keyid: {{ s3_keyid }}
+      key: {{ s3_key }}

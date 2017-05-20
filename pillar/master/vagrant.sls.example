@@ -1,0 +1,4 @@
+# example vagrant.sls
+
+s3_keyid: abc1234
+s3_key: 1234

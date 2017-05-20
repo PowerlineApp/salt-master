@@ -1,0 +1,31 @@
+master_id: saltmaster
+
+s3.location: us-east-1
+s3.buckets:
+  - deployment-data
+
+fileserver_backend:
+  - roots
+  - s3fs
+
+file_roots:
+  base:
+    - /srv/powerline-infrastructure/states
+    - /srv/test
+    - /srv/powerline-legacy/salt
+    - /srv/formulas/rabbitmq-formula
+
+runner_dirs:
+ - /srv/powerline-infrastructure/runners
+
+extension_modules: /srv/powerline-infrastructure/extmods
+
+pillar_roots:
+  base:
+    - /srv/powerline-infrastructure/pillar
+    - /srv/powerline-legacy/pillar
+
+external_auth:
+  pam:
+    saltapi:
+      - .*
