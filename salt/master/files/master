@@ -10,6 +10,7 @@ fileserver_backend:
 
 file_roots:
   base:
+    - /srv/salt-master/salt
     - /srv/powerline-infrastructure/states
     - /srv/test
     - /srv/powerline-legacy/salt
@@ -22,6 +23,7 @@ extension_modules: /srv/powerline-infrastructure/extmods
 
 pillar_roots:
   base:
+    - /srv/salt-master/pillar
     - /srv/powerline-infrastructure/pillar
     - /srv/powerline-legacy/pillar
 
