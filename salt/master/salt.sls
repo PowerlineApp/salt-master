@@ -23,7 +23,7 @@ manage_reactors_conf:
 
 {% if salt['grains.get']('civix:environment') == 'vagrant' %}
 # vagrant/testing needs key/id
-manage_s3_conf:
+manage_vagrant_s3_conf:
   file.managed:
     - name: /etc/salt/master.d/s3.conf
     - source: salt://{{ slspath }}/files/s3.conf.vagrant
