@@ -5,7 +5,7 @@ hostname: saltmaster
 runcmd:
  - "echo saltmaster > /etc/hostname"
  - "echo 127.0.1.1 saltmaster >> /etc/hosts"
- - "wget -O - https://bootstrap.saltstack.com | sudo sh -s -- -M -N -P -c /tmp"
+ - "wget -O - https://bootstrap.saltstack.com | sudo sh -s -- stable 2016.11.5 -M -N -P -c /tmp"
  - "git clone https://github.com/PowerlineApp/salt-master.git /srv/salt-master"
  - "salt-call --local --file-root=/srv/salt-master/salt --pillar-root=/srv/salt-master/pillar state.apply"
 write_files:
