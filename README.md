@@ -1,6 +1,16 @@
 # salt-master
 Salt states for the Powerline salt master
 
+# Usage
+
+To provision the machine:
+
+`salt-call --local --file-root=/srv/salt-master/salt --pillar-root=/srv/salt-master/pillar state.apply`
+
+Use `mock` to test:
+
+`salt-call --local --file-root=/srv/salt-master/salt --pillar-root=/srv/salt-master/pillar state.apply mock=True`
+
 # Development
 
 Development happens using vagrant.

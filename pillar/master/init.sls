@@ -1,6 +1,6 @@
 
 include:
-  - .master
+  - master.core
 {% if salt['grains.get']('civix:environment') == 'vagrant' -%}
-  - .vagrant
+  - master.vagrant
 {%- endif %}
