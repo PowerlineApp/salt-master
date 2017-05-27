@@ -8,5 +8,5 @@
 #
 
 base:
-  'saltmaster':
+  '*':
     - master
