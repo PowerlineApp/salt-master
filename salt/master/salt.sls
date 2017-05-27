@@ -41,7 +41,12 @@ manage_s3_conf:
 
 salt-master-running:
   service.running:
+    - name: salt-master
     - enabled: True
+
+restart-salt-master:
+  service.running:
+    - name: salt-master
     - onchanges:
       - file: manage_master_conf
       - file: manage_reactors_conf
