@@ -1,10 +1,20 @@
 {% set ver = pillar['salt_version'] %}
 
+saltstack-apt-repo:
+  pkgrepo.managed:
+    - humanname: saltstack
+    - name: deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/archive/{{ver}} xenial main
+    - file: /etc/apt/sources.list.d/saltstack.list
+    - key_url: https://repo.saltstack.com/apt/ubuntu/16.04/amd64/archive/{{ver}}/SALTSTACK-GPG-KEY.pub
+    - skip_verify: True
+
 install_salt-master_core:
   pkg.installed:
     - pkgs:
       - salt-master: {{ ver }}
       - salt-minion: {{ ver }}
+    - require:
+      - pkgrepo: saltstack-apt-repo
 
 manage_master_conf:
   file.managed:
@@ -42,7 +52,6 @@ manage_s3_conf:
 salt-master-running:
   service.running:
     - name: salt-master
-    - enabled: True
 
 restart-salt-master:
   service.running:
