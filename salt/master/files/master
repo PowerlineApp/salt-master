@@ -10,8 +10,8 @@ fileserver_backend:
 
 file_roots:
   base:
-    - /srv/salt-master/salt
     - /srv/powerline-infrastructure/states
+    - /srv/salt-master/salt
     - /srv/test
     - /srv/powerline-legacy/salt
     - /srv/formulas/rabbitmq-formula
