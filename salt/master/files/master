@@ -15,6 +15,7 @@ file_roots:
     - /srv/test
     - /srv/powerline-legacy/salt
     - /srv/formulas/rabbitmq-formula
+    - /srv/formulas/jenkins-formula
 
 runner_dirs:
  - /srv/powerline-infrastructure/runners

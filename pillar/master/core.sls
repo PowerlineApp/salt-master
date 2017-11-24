@@ -1,1 +1,1 @@
-salt_version: 2016.11.5
+salt_version: 2017.7.2
